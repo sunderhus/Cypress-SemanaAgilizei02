@@ -2,5 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
     "baseUrl": "http://automationpractice.com/index.php",
     "watchForFileChanges": true,
-    "experimentalSourceRewriting": false
+    "experimentalSourceRewriting": false,
+    "viewportWidth": 1000,
+    "viewportHeight": 860
 }
