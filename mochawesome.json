@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-12-12T18:56:11.077Z",
-    "end": "2020-12-12T18:56:21.444Z",
-    "duration": 10367,
+    "start": "2020-12-12T18:56:31.229Z",
+    "end": "2020-12-12T18:56:42.438Z",
+    "duration": 11209,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "fed5af0b-820c-4ac8-877d-cfaeb1e835a6",
+      "uuid": "03a48933-15e0-470f-929d-a0bdc5d4bde1",
       "title": "",
       "fullFile": "cypress/integration/basic.ts",
       "file": "cypress/integration/basic.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d041c37e-7a0c-4ae3-a9db-35666d473a0a",
+          "uuid": "5e0925ff-1f09-42d1-bf77-48db477fc688",
           "title": "Buy",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "should be able to buy a product",
               "fullTitle": "Buy should be able to buy a product",
               "timedOut": null,
-              "duration": 10273,
+              "duration": 11123,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.login();\nvar productName = 'Faded Short Sleeve T-shirts';\ncy.visit('/');\ncy.contains(productName)\n    .trigger('mouseover')\n    .parent()\n    .siblings('div.button-container')\n    .children('a')\n    .first()\n    .click();\n// Validate , if this the same product added to cart.\ncy.get(\".icon-ok\")\n    .parent()\n    .should('contain.text', 'Product successfully added to your shopping cart');\ncy.get(\"#layer_cart_product_title\").should('contain.text', productName);\ncy.get('.button-container')\n    .children('a[href$=\"controller=order\"]')\n    .click();\ncy.get('.cart_navigation')\n    .children(\"a[href$='order&step=1']\")\n    .click();\n// 2) Ensure that home address is equal to billing address\n// Should(Assert| attr | value).\ncy.get(\"[type='checkbox']#addressesAreEquals\")\n    .should('have.attr', 'checked', 'checked')\n    .should('have.attr', 'name', 'same');\ncy.get(\"button[name='processAddress']\")\n    .click();\ncy.get(\"[type='checkbox']#cgv\").check();\ncy.get(\"button[name='processCarrier']\")\n    .click();\ncy.get(\".bankwire\").click();\ncy.get(\".cart_navigation\")\n    .children(\"button[type=\\\"submit\\\"]\")\n    .find(\"span\")\n    .contains(\"I confirm my order\")\n    .click();\ncy.get(\".cheque-indent\")\n    .children(\"strong\")\n    .should('contain.text', 'Your order on My Store is complete.');\n// Invoke - used to invoke a JS function to perform some logic. \n// [x] 1. select all text to performe filters and extract information.\n// [x] 2. filter to get order id, using regex\n// [x] 3. save this  ID into a file \n// [x] 4. get ID back\ncy.get(\"div.box\").invoke('text').then(function (text) {\n    var result = text.match(/([A-Z][A-Z]+\\w{7,})/g);\n    var orderID = result ? result[0] : '';\n    // command to write values.\n    cy.writeFile('cypress/fixtures/order.json', { id: \"\" + orderID });\n});\ncy.get(\".cart_navigation a[href$='history']\")\n    .click();\n// read file and get values from it.\ncy.readFile('cypress/fixtures/order.json').then(function (order) {\n    cy.get('tr.first_item .history_link a').should('contain.text', order.id);\n});",
               "err": {},
-              "uuid": "e65937ff-74b2-4c87-9232-1a2aa49853f5",
-              "parentUUID": "d041c37e-7a0c-4ae3-a9db-35666d473a0a",
+              "uuid": "6a084bb1-1116-45da-b4be-9332430adabc",
+              "parentUUID": "5e0925ff-1f09-42d1-bf77-48db477fc688",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e65937ff-74b2-4c87-9232-1a2aa49853f5"
+            "6a084bb1-1116-45da-b4be-9332430adabc"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 10273,
+          "duration": 11123,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
