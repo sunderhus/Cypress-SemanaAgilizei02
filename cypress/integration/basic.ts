@@ -1,6 +1,7 @@
 describe('Buy', () => {
     it('should be able to buy a product', () => {
         cy.login();
+
         const productName = 'Faded Short Sleeve T-shirts';
 
         cy.visit('/');

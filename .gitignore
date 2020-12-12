@@ -2,3 +2,6 @@ node_modules
 cypress/videos/**
 cypress/fixtures/**
 debug.log
+mochawesome-report
+mochawesome-report/**
+index.json
