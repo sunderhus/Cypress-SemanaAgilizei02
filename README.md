@@ -19,7 +19,7 @@ yarn report
 // to clean reports generated
 yarn report:clean
 
-// open the integration folder, create new tests and have fun!
+// open the integration folder, create new tests and have fun!👨🏻‍💻👩🏿‍💻
 ```
 
 <p style="color:#888;text-decoration:none;font-weight:bold;"">Create with  💜, <a style="color:#0a66c2;text-decoration:none;font-weight:bold;" href="https://www.linkedin.com/in/matheus-sunderhus/">Linkedin - Matheus Sunderhus🔗</a></p>
