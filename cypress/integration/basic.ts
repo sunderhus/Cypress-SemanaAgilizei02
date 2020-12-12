@@ -29,22 +29,13 @@ describe('Buy', () => {
             .children(`a[href$='order&step=1']`)
             .click();
 
-        // cy.get('#email')
-        //     .type('semana-agilizei@mail.com');
-        // cy.get('#passwd')
-        //     .type('12345');
 
-        // cy.get('#SubmitLogin')
-        //     .click();
-
-        //2) Ensure that home address is equal to bill address
+        // 2) Ensure that home address is equal to billing address
         // Should(Assert| attr | value).
 
         cy.get(`[type='checkbox']#addressesAreEquals`)
             .should('have.attr', 'checked', 'checked')
             .should('have.attr', 'name', 'same');
-
-
 
         cy.get("button[name='processAddress']")
             .click();
@@ -72,6 +63,7 @@ describe('Buy', () => {
         // [x] 2. filter to get order id, using regex
         // [x] 3. save this  ID into a file 
         // [x] 4. get ID back
+
         cy.get(`div.box`).invoke('text').then((text) => {
             const result = text.match(/([A-Z][A-Z]+\w{7,})/g);
             const orderID = result ? result[0] : '';
@@ -82,6 +74,7 @@ describe('Buy', () => {
 
         cy.get(`.cart_navigation a[href$='history']`)
             .click();
+            
         // read file and get values from it.
         cy.readFile('cypress/fixtures/order.json').then(order => {
             cy.get('tr.first_item .history_link a').should('contain.text', order.id)
