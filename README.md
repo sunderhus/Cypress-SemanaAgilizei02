@@ -13,6 +13,12 @@ yarn
 yarn cy:run
 yarn cy:open
 
+// to generate reports in html
+yarn report
+
+// to clean reports generated
+yarn report:clean
+
 // open the integration folder, create new tests and have fun!
 ```
 
